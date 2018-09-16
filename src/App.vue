@@ -16,8 +16,7 @@
           </div>
           <div>
           <p class="bio">
-            Sometimes my friends call me “Woooooooooooo”. Currently, I'm a third year <span class="highlight-container"><span class="highlight">software engineering student at
-            Concordia University</span></span> on my quest to get the iron ring. I'm passionate about travelling, sports, space, and coding. 
+            Sometimes, my friends call me “Woooooooooooo”. Currently, I'm a third year software engineering student at <span class="highlight-container"><span class="highlight">Concordia University</span></span> on my quest to get the iron ring. I'm passionate about travelling, sports, space, and coding. 
             Some of my role models are Chris Hadfield, Elon Musk, Gary Vaynerchuk, Casey Neistat. <br /> <br />
             Feel free to checkout out my <a class="bold" target="_blank" href="/files/chriswoo_resume.pdf">resume</a> 
             or reach out to me at <a class="bold" target="_blank" href="mailto:chriskfwoo@gmail.com?subject=Hello!">chriskfwoo@gmail.com</a>.

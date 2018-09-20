@@ -10,9 +10,7 @@
             <h5>software engineer & self-proclaimed ping pong pro <i class="em em-table_tennis_paddle_and_ball"></i> </h5>
           </div>
           <div class="pics">
-            <img alt="chris" src="./assets/me.jpg" width="25%" height="25%">
-            <img alt="snowboard" src="./assets/snowboard.jpg" width="25%" height="25%">
-            <img alt="hike" src="./assets/waterfall.jpg" width="25%" height="25%">
+            <img v-for="pic in selfies" :key="pic.id" :alt="pic.id" :src="pic.img" width="25%" height="25%" />
           </div>
           <div>
           <p class="bio">
@@ -22,33 +20,20 @@
             or reach out to me at <a class="bold" target="_blank" href="mailto:chriskfwoo@gmail.com?subject=Hello!">chriskfwoo@gmail.com</a>.
           </p>
           <div>
-            <a target="_blank" href="https://www.linkedin.com/in/chriskfwoo"><ion-icon name="logo-linkedin"></ion-icon></a>
-            <a target="_blank" href="mailto:chriskfwoo@gmail.com?subject=Hello!"><ion-icon name="mail"></ion-icon></a>
-            <a target="_blank" href="https://github.com/chriskfwoo"><ion-icon name="logo-github"></ion-icon></a>
-            <a target="_blank" href="/files/chriswoo_resume.pdf"><ion-icon name="document"></ion-icon></a>
+            <a v-for="link in links" :key="link.icon" target="_blink" :href="link.href">
+              <ion-icon :name="link.icon"></ion-icon>
+            </a>
           </div>
           </div>
         </div>
         <div class="one-half column">
           <h3 class="highlight">Experience</h3>
-          <div>
-            <h6>Jan 2018 - Present <br /> 
-              <span class="bold">Software Developer Intern @ Vigilant - a DRW Company</span>
+          <div class="experiences" v-for="exp in experiences" :key="exp.id">
+            <h6>{{exp.date}} <br /> 
+              <span class="bold">{{exp.position}} @ {{exp.company}}</span>
             </h6>
-            <img alt="chris" src="./assets/vigilant.png" width="35%" height="35%">
+            <img :alt="exp.id" :src="exp.img" width="35%" height="35%">
           </div>
-          <br />
-          <div>
-            <h6>May 2017 - Aug 2017 <br />
-              <span class="bold">Software Developer Intern @ Carson eCommerce</span>
-            </h6>
-            <img alt="chris" src="./assets/carson.png" width="35%" height="35%">
-          </div>
-          <!-- <h3 class="highlight">Reminders</h3>
-            I have a bet that Tottenham Hotspurs will finish higher then Arsenal in the 2018-2019 Premier League.
-            <br /> <br />
-            My friend and I take turns buying a large popcorn!
-            Whose turn is it? <span class="bold">Me</span>. <a>Switch?</a> -->
         </div>
       </div>
     </div>
@@ -60,12 +45,64 @@
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+
+const linkedin = "https://www.linkedin.com/in/chriskfwoo";
+const github = "https://github.com/chriskfwoo";
+const email = "chriskfwoo@gmail.com";
 
 export default {
   name: "app",
-  components: {
-    HelloWorld
+  data: function() {
+    return {
+      links: [
+        {
+          href: linkedin,
+          icon: "logo-linkedin"
+        },
+        {
+          href: `mailto:${email}?subject=Hello!`,
+          icon: "mail"
+        },
+        {
+          href: github,
+          icon: "logo-github"
+        },
+        {
+          href: "/files/chriswoo_resume.pdf",
+          icon: "document"
+        }
+      ],
+      experiences: [
+        {
+          id: "vigilant",
+          date: "Jan 2018 - Present",
+          position: "Software Developer Intern",
+          company: "Vigilant - a DRW Company",
+          img: require("./assets/vigilant.png")
+        },
+        {
+          id: "carson",
+          date: "May 2017 - Aug 2017",
+          position: "Software Developer Intern",
+          company: "Carson eCommerce",
+          img: require("./assets/carson.png")
+        }
+      ],
+      selfies: [
+        {
+          id: "me",
+          img: require("./assets/me.jpg")
+        },
+        {
+          id: "snowboard",
+          img: require("./assets/snowboard.jpg")
+        },
+        {
+          id: "waterfall",
+          img: require("./assets/waterfall.jpg")
+        }
+      ]
+    };
   }
 };
 </script>
@@ -96,8 +133,11 @@ ion-icon {
     opacity: 0.5;
   }
 }
+.experiences {
+  padding-bottom: 25px;
+}
 .name {
-  font-size: 5rem;
+  font-size: 4.5rem;
 }
 .em-wave {
   height: 1em;
@@ -109,10 +149,6 @@ ion-icon {
 }
 .container {
   max-width: 100%;
-}
-.u-full-width {
-  width: 100%;
-  box-sizing: border-box;
 }
 .bottom,
 .top {

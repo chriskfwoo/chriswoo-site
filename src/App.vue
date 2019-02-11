@@ -75,7 +75,7 @@ export default {
       experiences: [
         {
           id: "vigilant",
-          date: "Jan 2018 - Present",
+          date: "Jan 2018 - Dec 2018",
           position: "Software Developer Intern",
           company: "Vigilant - a DRW Company",
           img: require("./assets/vigilant.png")

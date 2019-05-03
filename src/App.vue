@@ -14,7 +14,7 @@
           </div>
           <div>
           <p class="bio">
-            Sometimes, my friends call me “Woooooooooooo”. Currently, I'm a third year software engineering student at <span class="highlight-container"><span class="highlight">Concordia University</span></span> on my quest to get the iron ring. I'm passionate about travelling, sports, space, and coding. 
+            Sometimes, my friends call me “Woooooooooooo”. Currently, I'm a fourth year software engineering student at <span class="highlight-container"><span class="highlight">Concordia University</span></span> on my quest to get the iron ring. I'm passionate about travelling, sports, space, and coding. 
             Some of my role models are Chris Hadfield, Elon Musk, Gary Vaynerchuk, Casey Neistat. <br /> <br />
             Feel free to checkout out my <a class="bold" target="_blank" href="/files/chriswoo_resume.pdf">resume</a> 
             or reach out to me at <a class="bold" target="_blank" href="mailto:chriskfwoo@gmail.com?subject=Hello!">chriskfwoo@gmail.com</a>.
@@ -32,7 +32,7 @@
             <h6>{{exp.date}} <br /> 
               <span class="bold">{{exp.position}} @ {{exp.company}}</span>
             </h6>
-            <img :alt="exp.id" :src="exp.img" width="35%" height="35%">
+            <img :alt="exp.id" :src="exp.img" width="30%" height="30%" @click="redirect(exp.link)">
           </div>
         </div>
       </div>
@@ -74,18 +74,28 @@ export default {
       ],
       experiences: [
         {
+          id: "plotly",
+          date: "May 2019 - Present",
+          position: "Software Engineer Intern",
+          company: "Plotly",
+          img: require("./assets/plotly.png"),
+          link: "http://plot.ly"
+        },
+        {
           id: "vigilant",
           date: "Jan 2018 - Dec 2018",
           position: "Software Developer Intern",
-          company: "Vigilant - a DRW Company",
-          img: require("./assets/vigilant.png")
+          company: "DRW",
+          img: require("./assets/drw.png"),
+          link: "http://drw.com"
         },
         {
           id: "carson",
           date: "May 2017 - Aug 2017",
           position: "Software Developer Intern",
           company: "Carson eCommerce",
-          img: require("./assets/carson.png")
+          img: require("./assets/carson.png"),
+          link: "https://storetasker.com"
         }
       ],
       selfies: [
@@ -103,7 +113,13 @@ export default {
         }
       ]
     };
+  },
+  methods: {
+    redirect: function(link) {
+      window.open(link, "_blank");
+    }
   }
+  
 };
 </script>
 

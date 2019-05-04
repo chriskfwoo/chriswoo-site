@@ -38,6 +38,7 @@
       </div>
     </div>
   <footer>
+    <a href="/2018">2018</a>
     <a href="/2017">2017</a>
     <a href="/2016">2016</a>
   </footer>

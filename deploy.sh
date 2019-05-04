@@ -8,6 +8,7 @@ npm run build
 
 cp public/2016/index.html dist/2016
 cp public/2017/index.html dist/2017
+cp public/2018/index.html dist/2018
 
 # navigate into the build output directory
 cd dist

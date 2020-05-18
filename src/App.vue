@@ -1,6 +1,5 @@
 <template>
   <div id="app">
-    <!-- <div></div> -->
     <div class="container">
       <div class="cw-header">
         <input checked type="checkbox" id="switch" name="theme" @change="toggleTheme()" />
@@ -25,10 +24,10 @@
       </div>
       <p class="cw-info">
         Sometimes, my friends call me
-        <i>Woooooooooooo or Woozzie</i>. Currently, I'm a fourth year software engineering student at
+        <i>Woooooooooooo or Woozzie</i>. I graduated from 
         <span
           class="extra"
-        >Concordia University</span> on my quest to get the iron ring.
+        >Concordia University</span> in Bachelor of Engineering in Software Engineering and completed my quest to get the iron ring.
         <br />
         <br />I also helped organize ConUHacks IV and V, the biggest hackathon in Montreal at Concordia University.
         <br />
@@ -57,8 +56,9 @@
           <p>{{project.info}}</p>
         </div>
       </div> -->
-    </div>
-    <!-- <div></div> -->
+      </div>
+      <img :src="snowboard" class="snowboard-selfie"/>
+      <img :src="hiking" class="hiking-selfie"/>
   </div>
 </template>
 
@@ -74,6 +74,8 @@ export default {
   },
   data: function() {
     return {
+      snowboard: require("./assets/snowboard-me.png"),
+      hiking:  require("./assets/hike-me.png"),
       theme: "dark",
       links: [
         {
@@ -108,7 +110,7 @@ export default {
           id: "drw1",
           img: require("./assets/drw-black.png"),
           info:
-            'I did my second internship at <span class="cw-experience-tag">DRW</span> (Jan 2018 - Dec 2018), I was there for a year while balancing school. I was part of the proprietary trading firm on the event-driven trading team. I was slowly becoming a full-stack engineer and learned a bit of the stock market along the way.'
+            'I did my second internship at <span class="cw-experience-tag">DRW</span> (January 2018 - December 2018), I was there for a year while balancing school. I was part of the proprietary trading firm on the event-driven trading team. I was slowly becoming a full-stack engineer and learned a bit of the stock market along the way.'
         },
         {
           id: "plotly",
@@ -120,7 +122,7 @@ export default {
           id: "drw2",
           img: require("./assets/drw-black.png"),
           info:
-            'In fall 2019, I pivoted back to <span class="cw-experience-tag">DRW</span> where I\'m currently a full-time Software Engineer under the event-driven trading team.'
+            'In September 2019, I pivoted back to <span class="cw-experience-tag">DRW</span> where I\'m currently a full-time Software Engineer under the event-driven trading team.'
         }
       ],
       projects: [
@@ -202,6 +204,7 @@ body {
   background-color: var(--primaryBackground);
   color: var(--primaryTextColor);
   font-family: "Open Sans", sans-serif;
+  margin: 0;
 }
 #app {
   // display: grid;
@@ -210,18 +213,18 @@ body {
 }
 h1 {
   color: var(--primaryTextColor);
-  font-size: 3.5rem;
+  font-size: 3rem;
 }
 h2 {
   color: var(--secondaryTextColor);
-  font-size: 1.8rem;
+  font-size: 1.5rem;
 }
 .extra {
   color: var(--tertiaryTextColor);
   font-weight: bold;
 }
 p {
-  font-size: 1.3rem;
+  font-size: 1rem;
 }
 .em-wave {
   font-size: 2rem;
@@ -240,6 +243,22 @@ p {
 }
 .cw-container {
 
+}
+.snowboard-selfie {
+  position: absolute;
+  bottom: 0px;
+  left: -50px;
+  height: 600px;
+  width: auto;
+  z-index: -1000;
+}
+.hiking-selfie {
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  height: 750px;
+  width: auto;
+  z-index: -100;
 }
 // SOCIAL SECTION
 .cw-socials {
@@ -345,8 +364,8 @@ label:active:after {
 }
 
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
+  padding-right: 25px;
+  padding-left: 25px;
   margin-right: auto;
   margin-left: auto;
 }
@@ -363,6 +382,30 @@ label:active:after {
 @media (min-width: 1200px) {
   .container {
     width: 800px;
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .snowboard-selfie {
+    position: relative;
+    bottom: 0;
+    height: 300px;
+    width: auto;
+    overflow-x: hidden;
+    margin-top: 50px;
+  }
+  .hiking-selfie {
+    display: none;
+  }
+  #app {
+    padding-bottom: 0px;
+    overflow-x: hidden;
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+  h2 {
+    font-size: 1.3rem;
   }
 }
 </style>

@@ -24,15 +24,13 @@
       </div>
       <p class="cw-info">
         Sometimes, my friends call me
-        <i>Woooooooooooo or Woozzie</i>. I graduated from 
-        <span
-          class="extra"
-        >Concordia University</span> in Bachelor of Engineering in Software Engineering and completed my quest to get the iron ring.
+        <i>Woooooooooooo or Woozzie</i>. I graduated from
+        <span class="extra">Concordia University</span> in Bachelor of Engineering in Software Engineering and completed my quest to get the iron ring.
         <br />
         <br />I also helped organize ConUHacks IV and V, the biggest hackathon in Montreal at Concordia University.
         <br />
         <br />I'm
-        <span class="extra">passionate</span> about travelling, sports, space, and coding. Some of my role models are Chris Hadfield, Elon Musk, Gary Vaynerchuk, Casey Neistat.
+        <span class="extra">passionate</span> about travelling, sports, space, and coding. Some of my role models are Chris Hadfield, Gary Vaynerchuk, Casey Neistat, and Mom.
       </p>
       <div class="cw-experience">
         <div class="cw-experience-item" v-for="job in jobs" :key="job.id">
@@ -55,10 +53,10 @@
           </h4>
           <p>{{project.info}}</p>
         </div>
-      </div> -->
-      </div>
-      <img :src="snowboard" class="snowboard-selfie"/>
-      <img :src="hiking" class="hiking-selfie"/>
+      </div>-->
+    </div>
+    <img :src="snowboard" class="snowboard-selfie fade-in" />
+    <img :src="hiking" class="hiking-selfie fade-in" />
   </div>
 </template>
 
@@ -75,7 +73,7 @@ export default {
   data: function() {
     return {
       snowboard: require("./assets/snowboard-me.png"),
-      hiking:  require("./assets/hike-me.png"),
+      hiking: require("./assets/hike-me.png"),
       theme: "dark",
       links: [
         {
@@ -191,7 +189,6 @@ html[data-theme="dark"] {
   --fadedTextColor: #c2c2c2;
 }
 
-
 html.theme-transition,
 html.theme-transition *,
 html.theme-transition *:before,
@@ -242,13 +239,12 @@ p {
   padding: 30px 0px;
 }
 .cw-container {
-
 }
 .snowboard-selfie {
   position: absolute;
   bottom: 0px;
   left: -50px;
-  height: 600px;
+  height: 550px;
   width: auto;
   z-index: -1000;
 }
@@ -256,7 +252,7 @@ p {
   position: absolute;
   bottom: 0px;
   right: 0px;
-  height: 750px;
+  height: 700px;
   width: auto;
   z-index: -100;
 }
@@ -369,6 +365,59 @@ label:active:after {
   margin-right: auto;
   margin-left: auto;
 }
+
+.fade-in {
+  animation: fadeIn ease 10s;
+  -webkit-animation: fadeIn ease 10s;
+  -moz-animation: fadeIn ease 10s;
+  -o-animation: fadeIn ease 10s;
+  -ms-animation: fadeIn ease 10s;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-moz-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-o-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-ms-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 @media (min-width: 768px) {
   .container {
     width: 750px;

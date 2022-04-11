@@ -1,16 +1,5 @@
-# chriswoo
+# chriswoo.me
 
-## Project setup
-```
-npm install
-```
+## Versions
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
+[2016](https://chriswoo.me/2016) | [2017](https://chriswoo.me/2017) | [2018](https://chriswoo.me/2018) | [2019](https://chriswoo.me/2019) | [2020-Now](https://chriswoo.me/)

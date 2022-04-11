@@ -4,11 +4,14 @@
 set -e
 
 # build
-npm run build
+cd sites/2020 && npm run build && cd .. && cd ..
 
-cp public/2016/index.html dist/2016
-cp public/2017/index.html dist/2017
-cp public/2018/index.html dist/2018
+cp -R sites/2016 dist/2016
+cp -R sites/2017 dist/2017
+cp -R sites/2018 dist/2018
+cp -R sites/2019 dist/2019
+cp -R sites/2020/prod dist/2020
+cp -R sites/2022 dist/2022
 
 # navigate into the build output directory
 cd dist

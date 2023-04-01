@@ -17,7 +17,7 @@ cp -R sites/2022 dist/2022
 cd dist
 
 # if you are deploying to a custom domain
-echo 'chriswoo.me' > CNAME
+echo 'woozzie.com' > CNAME
 
 git init
 git add -A
